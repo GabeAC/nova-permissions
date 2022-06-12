@@ -70,19 +70,19 @@ class NovaPermissions extends Tool
 		return view('nova-permissions::navigation');
 	}
 	
-	public function menu(Request $request)
-    	{
+
+        public function menu(Request $request)
+    {
     	
-        	return [
+        return [
         	
-            		MenuSection::make(__('nova-spatie-permissions::lang.sidebar_label'), [
-            			MenuItem::link('Roles'), 'resources/roles'),
-            			MenuItem::link('Permissions'), 'resources/permissions'),
-               		])->icon('key')->collapsable(),
+            MenuSection::make('Perms'), [
+                MenuItem::link('Roles'), 'resources/roles'),
+                MenuItem::link('Permissions'), 'resources/permissions'),
+               ])->icon('key')->collapsable(),
                 
-                ];
-    	}
-	
+            ];
+    }
 	/**
 	 * @param  string  $roleResource
 	 * @return mixed
