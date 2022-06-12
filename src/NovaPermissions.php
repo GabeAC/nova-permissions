@@ -70,18 +70,23 @@ class NovaPermissions extends Tool
 		return view('nova-permissions::navigation');
 	}
 	
-
-        public function menu(Request $request)
+    /**
+     * Build the menu that renders the navigation links for the tool.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return mixed
+     */
+    public function menu(Request $request)
     {
     	
         return [
         	
-            MenuSection::make('Perms'), [
-                MenuItem::link('Roles'), 'resources/roles'),
-                MenuItem::link('Permissions'), 'resources/permissions'),
-               ])->icon('key')->collapsable(),
+            MenuSection::make(__('Roles & Permissions'), [
+            		MenuItem::link(__('Roles'), 'resources/roles'),
+            		MenuItem::link(__('Permissions'), 'resources/permissions'),
+                ])->icon('key')->collapsable(),
                 
-            ];
+                ];
     }
 	/**
 	 * @param  string  $roleResource
