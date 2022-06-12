@@ -3,6 +3,7 @@
 
 namespace GrapheneICT\NovaPermissions;
 
+use Illuminate\Http\Request;
 use GrapheneICT\NovaPermissions\Nova\Permission;
 use GrapheneICT\NovaPermissions\Nova\Role;
 use Laravel\Nova\Tool;
