@@ -8,6 +8,7 @@ use Laravel\Nova\Nova;
 use Laravel\Nova\Resource;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\Text;
 use Illuminate\Validation\Rule;
 use Laravel\Nova\Fields\Select;
@@ -60,7 +61,7 @@ class Role extends Resource
 	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
-	public function actions(Request $request)
+	public function actions(NovaRequest $request)
 	{
 		return [];
 	}
@@ -71,7 +72,7 @@ class Role extends Resource
 	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
-	public function cards(Request $request)
+	public function cards(NovaRequest $request)
 	{
 		return [];
 	}
@@ -83,7 +84,7 @@ class Role extends Resource
 	 *
 	 * @return array
 	 */
-	public function fields(Request $request)
+	public function fields(NovaRequest $request)
 	{
 		$guardOptions = collect(config('auth.guards'))->mapWithKeys(function ($value, $key) {
 			return [$key => $key];
@@ -127,7 +128,7 @@ class Role extends Resource
 	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
-	public function filters(Request $request)
+	public function filters(NovaRequest $request)
 	{
 		return [];
 	}
@@ -148,7 +149,7 @@ class Role extends Resource
 	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
-	public function lenses(Request $request)
+	public function lenses(NovaRequest $request)
 	{
 		return [];
 	}

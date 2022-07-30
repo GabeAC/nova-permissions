@@ -11,6 +11,7 @@ use Illuminate\Validation\Rule;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Spatie\Permission\Models\Permission as SpatiePermission;
 
 class Permission extends Resource
@@ -57,7 +58,7 @@ class Permission extends Resource
 	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
-	public function actions(Request $request)
+	public function actions(NovaRequest $request)
 	{
 		return [
 		];
@@ -69,7 +70,7 @@ class Permission extends Resource
 	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
-	public function cards(Request $request)
+	public function cards(NovaRequest $request)
 	{
 		return [];
 	}
@@ -81,7 +82,7 @@ class Permission extends Resource
 	 *
 	 * @return array
 	 */
-	public function fields(Request $request)
+	public function fields(NovaRequest $request)
 	{
 		$guardOptions = collect(config('auth.guards'))->mapWithKeys(function ($value, $key) {
 			return [$key => $key];
@@ -119,7 +120,7 @@ class Permission extends Resource
 	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
-	public function filters(Request $request)
+	public function filters(NovaRequest $request)
 	{
 		return [];
 	}
@@ -140,7 +141,7 @@ class Permission extends Resource
 	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
-	public function lenses(Request $request)
+	public function lenses(NovaRequest $request)
 	{
 		return [];
 	}
