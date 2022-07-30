@@ -11,7 +11,6 @@ use Laravel\Nova\Nova;
 use Laravel\Nova\Menu\Menu;
 use Laravel\Nova\Menu\MenuItem;
 use Laravel\Nova\Menu\MenuSection;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class NovaPermissions extends Tool
 {
@@ -75,7 +74,7 @@ class NovaPermissions extends Tool
      * @param  \Illuminate\Http\Request $request
      * @return mixed
      */
-    public function menu(NovaRequest $request)
+    public function menu(Request $request)
     {
     	
         return [
