@@ -37,7 +37,10 @@ class ToolServiceProvider extends ServiceProvider
 			$this->routes();
 		});
 		
-		Nova::serving(function (ServingNova $event) {});
+		Nova::serving(function (ServingNova $event) {
+            Nova::script('nova-permissions', __DIR__.'/../dist/js/field.js');
+            Nova::style('nova-permissions', __DIR__.'/../dist/css/field.css');
+        });
 	}
 	
 	/**
